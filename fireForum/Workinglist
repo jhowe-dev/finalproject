@@ -1,0 +1,13 @@
+var list = document.getElementById("testList");
+    
+    var elm = document.createElement('li');
+    var cont = message.Message;
+    var u = message.User;
+    var du = message.DisplayName;
+    
+    var contString = " "+topic+": "+cont+"   -"+du;
+    elm.appendChild(document.createTestNode(contString));
+    elm.dataset.uId(u);
+    elm.dataset.messID(messageID);
+    elm.addEventListener("click", alert(elm.dataset["uId"]));
+    list.appendChild(elm);

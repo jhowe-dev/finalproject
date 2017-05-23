@@ -1,0 +1,84 @@
+<HTML>
+<head>
+    
+    <title>fire-forum</title>
+    <!--jQuery import-->
+    <script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <!--Links Style All Sass Bootstrap stuff-->
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    
+    <!--Bootstrap  line to handle mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--Bootstrap styling -->
+    <!--<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    <!--Firebase import-->
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    
+    <script>
+    // Initialize Firebase
+    var config = {
+       apiKey: "AIzaSyDI_1mqMh4D08yzWBntg_5hhpWVo-hkN9c",
+      authDomain: "finalandyproject.firebaseapp.com",
+      databaseURL: "https://finalandyproject.firebaseio.com",
+      projectId: "finalandyproject",
+      storageBucket: "finalandyproject.appspot.com",
+      messagingSenderId: "292502387006"
+    };
+    firebase.initializeApp(config);
+    </script>
+</head>
+
+  <body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Final Portfolio</a>
+          <img id="gitPic" src="assets/sancho.jpg"></img>
+          <button class="btn btn-primary navbar-btn" id="login" onClick="loginFunction()">Login</button>
+          <button class="btn btn-danger navbar-btn" id="logout" onClick="logoutFunction()">Logout</button>
+        </div>
+      </div>
+    </nav>
+    
+    <div class = "container">
+      <h1 id="welcome" class= "jumbotron center-text welcome">Welcome! Please have a look around. Click pictures for descriptions</h1>
+    </div>
+    
+    <div id="twistPic" class = "container" onClick="javascript:clickMeTwist()">
+      <img src="assets/TextTwist.png" class = "vertical-center"></img>  
+    </div>
+    <div id="firePic" class = "container extra-padding-top" onClick="javascript:clickMeFire()">
+      <img src="assets/FinalFire.png" class = "vertical-center"></img>  
+    </div>
+    
+    <div class="container">
+      <form action="javascript:fireMessage()">
+        <div class="form-group extra-padding-top">
+          <label for="messageData">Enter Your message here: </label>
+          <textarea class="form-control" name="messageData" id="messageData" maxlength="5000" rows="3" onchange="this.value = this.value.replace(/[^\w\s.!?,;]+/g, '')" required></textarea>
+        </div>
+      
+          <div class="form-group">  
+            <input class="btn btn-default" type="submit" value="submit message"/>
+          </div>
+      </form>
+    </div>
+    <div id ="messList" class="container list-group">
+        <!--Where the messages will get generated-->
+    </div>
+    
+    
+    <div id="overTwist" class="overlayTwist" onClick="javascript:overTwist()"></div>
+    <div id="overFire" class="overlayFire" onClick="javascript:overFire()"></div>
+    <div class="popupFire" id="popupFire">In this project, we were tasked with creating a simple forum.  The forum designed by my team uses Firebase as the backend and JS frontend.
+    This project taught how to defend against XSS, HTML injection, and JS injection.  Our use of Firebase avoided SQL injection.</div>
+    <div class="popupTwist" id="popupTwist">In this project, we were tasked with creating a clone of the simple game Text Twist.  My team used a LAMP stack with a JS frontend.  This project showcases how to
+    defend against SQL injection and XSS attacks.</div>
+  </body>
+  <script src="script.js"></script>
+  <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+</html>

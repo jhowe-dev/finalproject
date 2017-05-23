@@ -1,0 +1,62 @@
+//imports
+@import 'customVariables';
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import 'custom';
+
+//variables here
+
+//mixins
+
+
+//nested styling
+body {
+    padding-bottom:35px;
+}
+
+#gitPic{
+        height:40px;
+        width:40px;
+        margin:{
+            right:6px;
+            top:2px;
+        };
+    }//not sure why andy picture doesnt get written over with new styling
+    //if nested in body tag
+    
+    
+.messageLoad{
+    
+    animation: topLoad 1s ease;  
+    transition-delay: 0.5s;
+    
+}
+.vertical-center {
+  height: 100%; /* These two lines are counted as one :-)       */
+  width: 100%;
+  display: flex;
+  box-shadow: 0 0 5px gray;
+  align-items: center;
+}
+.extra-padding-top
+{
+    padding-top: 24px;
+}
+.color-test{
+    color:#4283f4;
+}
+@keyframes topLoad{
+    0% {
+        // margin-top:-20%;
+        opacity:0.1;
+        background-color: #eee;
+        color: #fff ;
+    }
+    
+    100% {
+        // margin-top:0%;
+        opacity: 1;
+        background-color: #fff;
+        color: #000;
+    }
+    
+}

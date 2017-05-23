@@ -1,0 +1,33 @@
+//make all the elements
+    var list = document.getElementById("testList");
+    
+    var messContainer = document.createElement('a').setAttribute('class','list-group-item');
+    var messTopic = document.createElement('h4').setAttribute('class','list-group-item-heading');
+    var messContent = document.createElement('p').setAttribute('class','list-group-item-text');
+    var messUserID = document.createElement('p');//might not get used
+    var messDisplayName = document.createElement('p');
+    
+
+    // set the values
+    var cont = message.Message;
+    
+    var u = message.User;
+    
+    var du = message.DisplayName;
+
+    messTopic.val = topic;
+    messContent = cont;
+    messDisplayName = du;
+        
+    //append to list
+
+    //var contString = " "+topic+": "+cont+"   -"+du;
+    //elm.appendChild(document.createTextNode(contString));
+    messContainer.dataset.uID = u;
+    messContainer.dataset.messID = messageID;
+    
+    messContainer.appendChild(messTopic).appendChild(messContent).appendChild(messDisplayName);
+    
+    messContainer.addEventListener("click", function(){alert(messContainer.dataset["uID"])});
+    list.appendChild(messContainer);
+    
