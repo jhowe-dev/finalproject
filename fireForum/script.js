@@ -1,6 +1,6 @@
 var dbHandler = firebase.database().ref();
 var provider = new firebase.auth.GithubAuthProvider();
-var andPic = 'assets/sancho.jpg'
+var andPic = 'sancho.jpg'
 var up = '';
 var dn = '';
 var ref = firebase.database().ref("/Comments");
